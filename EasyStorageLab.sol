@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 
 import "./EasyStorage.sol";
 
-contract EasyStorageFactory{
+contract EasyStorageLab{
     EasyStorage[] public easyStorageArray;
 
     function createEasyStorageContract() public {
@@ -12,13 +12,13 @@ contract EasyStorageFactory{
         easyStorageArray.push(easyStorage);
     }
 
-    function esfStore(uint256 _easyStorageIndex, uint256 _easyStorageNumber) public {
+    function eslStore(uint256 _easyStorageIndex, uint256 _easyStorageNumber) public {
         // Must include Address and ABI (Application Binary Interface) here
         EasyStorage easyStorage = easyStorageArray[_easyStorageIndex];
         easyStorage.store(_easyStorageNumber);
     }
 
-    function esfGet(uint256 _easyStorageIndex) public view returns(uint256){
+    function eslGet(uint256 _easyStorageIndex) public view returns(uint256){
         EasyStorage easyStorage = easyStorageArray[_easyStorageIndex];
         return easyStorage.retrieve();
     }
