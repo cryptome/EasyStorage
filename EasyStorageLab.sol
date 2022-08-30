@@ -19,8 +19,7 @@ contract EasyStorageLab{
     }
 
     function eslGet(uint256 _easyStorageIndex) public view returns(uint256){
-        EasyStorage easyStorage = easyStorageArray[_easyStorageIndex];
-        return easyStorage.retrieve();
+        return easyStorageArray[_easyStorageIndex].retrieve();
     }
 
 }
